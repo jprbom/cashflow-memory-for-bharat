@@ -1,0 +1,5 @@
+id,merchantName,segment,city,consentStatus,readinessScore,monthlyInflow,monthlyOutflow
+profile_001,Meera Kirana Stores,KIRANA,Nashik,ACTIVE,742,124850,85630
+profile_002,Rafiq Food Cart,STREET_VENDOR,Lucknow,ACTIVE,688,76300,51400
+profile_003,Anika Home Studio,HOME_BUSINESS,Surat,ACTIVE,781,143400,93200
+

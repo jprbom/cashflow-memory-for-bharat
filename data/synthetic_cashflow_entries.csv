@@ -1,0 +1,5 @@
+id,profileId,description,category,direction,amount,source,occurredAt
+cash_001,profile_001,Daily UPI sales,INCOME,INFLOW,45000,UPI,2026-05-24
+cash_002,profile_001,Supplier payment,SUPPLIER,OUTFLOW,18350,AA_BANK,2026-05-25
+cash_003,profile_002,Evening sales,INCOME,INFLOW,13800,UPI,2026-05-25
+
