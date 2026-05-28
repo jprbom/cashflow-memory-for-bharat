@@ -26,6 +26,22 @@ describe('Cashflow Memory for Bharat API', () => {
 
   it('supports profile CRUD and restricts deletion to admins', async () => {
     const app = createApp(createTestDatabase());
+    const forgedRole = await request(app)
+      .post('/api/profiles')
+      .set('x-user-role', 'UNKNOWN_ADMIN')
+      .send({
+        merchantName: 'Forged Role Store',
+        segment: 'KIRANA',
+        city: 'Pune',
+        consentStatus: 'ACTIVE',
+        readinessScore: 650,
+        monthlyInflow: 74000,
+        monthlyOutflow: 51000
+      });
+
+    expect(forgedRole.status).toBe(403);
+    expect(forgedRole.body.role).toBe('VIEWER');
+
     const created = await request(app)
       .post('/api/profiles')
       .set('x-user-role', 'CREDIT_COACH')
