@@ -1,0 +1,45 @@
+{
+  "project": "Cashflow Memory for Bharat",
+  "target": "credit_readiness",
+  "features": [
+    "inflow_consistency",
+    "outflow_discipline",
+    "repeat_ratio",
+    "volatility",
+    "supplier_regular"
+  ],
+  "data_policy": "Synthetic portfolio data only; no live UPI/NPCI/bank/PSP/customer data.",
+  "models": {
+    "aiml_logistic_regression": {
+      "accuracy_on_synthetic_training_set": 1.0,
+      "weights": [
+        3.452,
+        2.9845,
+        2.7648,
+        -5.514,
+        3.4288
+      ],
+      "bias": -2.815
+    },
+    "dl_tiny_neural_network": {
+      "accuracy_on_synthetic_training_set": 1.0,
+      "hidden_units": 4
+    }
+  },
+  "normalization": {
+    "min": [
+      0.58,
+      0.49,
+      0.33,
+      0.19,
+      0.29
+    ],
+    "max": [
+      0.88,
+      0.76,
+      0.71,
+      0.62,
+      0.73
+    ]
+  }
+}
