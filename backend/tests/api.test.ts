@@ -1,14 +1,17 @@
 import request from 'supertest';
 import { describe, expect, it } from 'vitest';
 import { createApp } from '../src/app.js';
+import { signDemoToken, type Role } from '../src/auth.js';
 import { createTestDatabase } from '../src/db.js';
+
+const bearer = (role: Role) => 'Bearer ' + signDemoToken(role);
 
 describe('Cashflow Memory for Bharat API', () => {
   it('computes explainable credit readiness', async () => {
     const app = createApp(createTestDatabase());
     const response = await request(app)
       .post('/api/credit-readiness')
-      .set('x-user-role', 'CREDIT_COACH')
+      .set('Authorization', bearer('CREDIT_COACH'))
       .send({
         monthlyInflow: 124850,
         monthlyOutflow: 85630,
@@ -44,7 +47,7 @@ describe('Cashflow Memory for Bharat API', () => {
 
     const created = await request(app)
       .post('/api/profiles')
-      .set('x-user-role', 'CREDIT_COACH')
+      .set('Authorization', bearer('CREDIT_COACH'))
       .send({
         merchantName: 'Test Bharat Store',
         segment: 'KIRANA',
@@ -59,12 +62,12 @@ describe('Cashflow Memory for Bharat API', () => {
 
     const denied = await request(app)
       .delete('/api/profiles/' + created.body.id)
-      .set('x-user-role', 'CREDIT_COACH');
+      .set('Authorization', bearer('CREDIT_COACH'));
     expect(denied.status).toBe(403);
 
     const deleted = await request(app)
       .delete('/api/profiles/' + created.body.id)
-      .set('x-user-role', 'ADMIN');
+      .set('Authorization', bearer('ADMIN'));
     expect(deleted.status).toBe(204);
   });
 
@@ -72,7 +75,7 @@ describe('Cashflow Memory for Bharat API', () => {
     const app = createApp(createTestDatabase());
     const response = await request(app)
       .post('/api/mock-upi')
-      .set('x-user-role', 'OPS_MANAGER')
+      .set('Authorization', bearer('CREDIT_COACH'))
       .send({
         txnId: 'TXN-DEMO-001',
         payerVpa: 'payer@oksbi',
