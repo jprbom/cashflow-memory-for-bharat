@@ -1,183 +1,89 @@
 <p align="center">
-  <img src="docs/assets/hero.svg" width="100%" alt="Cashflow Memory for Bharat rich animated hero infographic">
+  <img src="https://capsule-render.vercel.app/api?type=waving&height=240&color=gradient&text=Cashflow%20Memory%20for%20Bharat&fontAlign=50&fontAlignY=38&fontSize=42&fontColor=ffffff&desc=Explainable%20cashflow%20memory%20and%20credit-readiness%20engine%20for%20thin-file%20merchants&descAlign=50&descAlignY=60&descSize=15&animation=fadeIn" width="100%" alt="Cashflow Memory for Bharat animated hero banner"/>
 </p>
 
 <p align="center">
-  <img src="frontend/public/logo.svg" width="92" alt="Cashflow Memory for Bharat animated logo">
-</p>
-
-<h1 align="center">Cashflow Memory for Bharat</h1>
-
-<p align="center"><strong>Explainable cashflow memory and credit-readiness engine for thin-file merchants.</strong></p>
-
-<p align="center">
-  <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-5.9-3178c6?style=for-the-badge&logo=typescript&logoColor=white">
-  <img alt="React" src="https://img.shields.io/badge/React-19-149eca?style=for-the-badge&logo=react&logoColor=white">
-  <img alt="Express" src="https://img.shields.io/badge/Express-5-111827?style=for-the-badge&logo=express&logoColor=white">
-  <img alt="Mock UPI" src="https://img.shields.io/badge/NPCI%20UPI-Mocked%20Sandbox-059669?style=for-the-badge">
-  <img alt="Security" src="https://img.shields.io/badge/Audit-0%20High%20Vulns-16a34a?style=for-the-badge&logo=securityscorecard&logoColor=white">
-  <img alt="License" src="https://img.shields.io/badge/License-Proprietary%20All%20Rights%20Reserved-991b1b?style=for-the-badge">
+  <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=700&size=22&duration=2600&pause=900&center=true&vCenter=true&width=900&lines=Investor+Showcase+%7C+No+Proprietary+Source+Code;Merchant+Cashflow+Memory+%7C+Responsible+Credit;UPI+and+AA-style+Signals+for+Thin-file+Merchants" alt="animated project narrative"/>
 </p>
 
 <p align="center">
-  <a href="#concept">Concept</a> &middot;
-  <a href="#working-demo">Working Demo</a> &middot;
-  <a href="#bfsi--fintech-benefit">BFSI Benefit</a> &middot;
-  <a href="#aiml--dl-layer">AIML/DL</a> &middot;
-  <a href="#run-locally">Run Locally</a>
+  <img src="https://img.shields.io/badge/Showcase-Concept%20Repository-0f172a?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Domain-Merchant%20Credit%20%7C%20UPI%20%7C%20Cashflow-059669?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Code-Not%20Exposed-991b1b?style=for-the-badge">
 </p>
 
-## Concept
+# Cashflow Memory for Bharat
 
-Cashflow Memory for Bharat is a full-stack UPI-native AI infrastructure prototype. It combines a React RBAC command center, secure Express APIs, CRUD data operations, concept-specific decisioning, and a mocked NPCI/UPI rail response layer. The repo is designed for portfolio demonstration and SDLC review, not live payment processing.
+**Explainable cashflow memory and credit-readiness engine for thin-file merchants.**
 
-The system uses synthetic data to show how a BFSI or fintech product team could operate explainable cashflow memory and credit-readiness engine for thin-file merchants. without touching real customer, bank, PSP, NPCI, or UPI rail data.
+This repository is a public concept showcase. It explains the product thesis, cashflow intelligence model, responsible-lending angle, AI/ML role and investor narrative. It does not expose proprietary source code, scoring models, embeddings, prompts, datasets, partner APIs, credentials or underwriting rules.
 
-## Prototype Positioning
+---
 
-This repo is intentionally positioned as a **runnable synthetic prototype**, not a production fintech system. The frontend, APIs, CRUD, RBAC workflow, mock UPI response, tests, Docker files, and documentation are real. The payment rail, security authority, persistence, and AIML/DL models are controlled demo layers.
+## Why this matters
 
-Use the phrasing: "UPI-native AI product prototype with SDLC packaging." Avoid the phrasing: "production-ready lending or underwriting platform."
+Small merchants often have real repayment capacity but weak bureau depth. Their UPI inflows, settlements, seasonality and expense patterns hold useful signals, but these signals are rarely converted into explainable credit-readiness insights.
 
-## Latest Enhancements
+The market gap is not just credit scoring. The gap is **merchant cashflow memory that lenders and merchants can understand**.
 
-This release closes the latest audit loop with practical, testable upgrades:
+## Product thesis
 
-| Area | Enhancement |
-| --- | --- |
-| Payment lifecycle | Added a five-adapter payment ecosystem simulator: PG, PA, TPAP, PSP/bank, and NPCI-style UPI rail. |
-| Webhooks | Added HMAC webhook signatures, duplicate-event idempotency, out-of-order delivery handling, and terminal-state governance. |
-| Security | Replaced raw role headers with signed local demo bearer tokens from `/api/auth/demo-token`; forged `x-user-role` is ignored. |
-| Frontend | Added a **Payment Ecosystem Timeline** CTA and visual lifecycle panel for settlement/cashflow memory evidence. |
-| Cashflow intelligence | Settlement and payment lifecycle events now feed the story for 90-day merchant cashflow memory and explainable credit readiness. |
-| AIML/DL | Upgraded `ml/train_model.py` to generate 10,000 synthetic rows, train/test split, metrics, confusion matrix, model card, and feature importance. |
-| Documentation | Added API contract, data model, threat model, observability, model governance, deployment, enterprise architecture, and investor due-diligence docs. |
-| Validation | `npm run verify` and browser E2E smoke tests pass locally with payment ecosystem coverage. |
+Cashflow Memory for Bharat converts merchant cashflow behaviour into a structured memory layer. It reads transaction patterns, stability, seasonality, volatility, settlement behaviour and recurring obligations to generate explainable working-capital readiness insights.
 
-## Working Demo
+---
 
-The frontend now has working tabs, CTAs, row drill-downs, create/patch/delete CRUD actions, domain-specific AI decision calls, and a mock UPI/NPCI request-response flow.
+## Concept flow
 
-| Flow | What works |
-| --- | --- |
-| RBAC | Role selector requests a signed local demo bearer token. Forged `x-user-role` headers are ignored. |
-| Tabs | Every sidebar tab changes active content and drill-down context. |
-| CRUD | The primary workspace can create, patch, inspect, and delete synthetic records. |
-| AI decision | `/credit-readiness` returns explainable reason codes. |
-| Mock UPI | `/api/mock-upi` returns RRN, UPI request id, bank reference, response code, settlement state, and webhook metadata. |
-| Payment ecosystem | `/api/payments/initiate` simulates PG, PA, TPAP, PSP/bank, NPCI-style rail, webhook, refund, dispute, and settlement lifecycle. |
-
-## Payment Ecosystem Simulator
-
-This repository does not use live NPCI, bank, PSP, TPAP, payment aggregator, or payment gateway APIs. It implements a public-safe simulator for product architecture, AI decisioning, fraud/risk workflows, and enterprise SDLC demonstration.
-
-The simulator includes five adapters: NPCI-style UPI rail, TPAP, PSP/bank, payment aggregator, and payment gateway. It also includes HMAC webhook signatures, duplicate-event idempotency, out-of-order webhook handling, settlement batches, disputes, refunds, and a frontend **Payment Ecosystem Timeline** panel.
-
-See [`docs/PAYMENT_ECOSYSTEM_SIMULATOR.md`](docs/PAYMENT_ECOSYSTEM_SIMULATOR.md).
-
-## BFSI / Fintech Benefit
-
-Lenders and fintechs can use this architecture to serve thin-file borrowers responsibly, explain credit-line decisions, preserve consent boundaries, and coach merchants toward safer working-capital eligibility.
-
-This project is useful for senior payment, fintech, digital banking, risk, platform, and AI product portfolios because it shows the full product chain: business concept, test data, secure APIs, RBAC, frontend workflows, explainability, model training, CI, documentation, and deployment thinking.
-
-## Architecture
-
-<p align="center">
-  <img src="docs/assets/system-map.svg" width="100%" alt="Cashflow Memory for Bharat architecture system map">
-</p>
-
-~~~mermaid
+```mermaid
 flowchart LR
-  UI["React RBAC Command Center"] --> AUTH["Signed Demo Token"]
-  AUTH --> API["Express API"]
-  API --> RBAC["RBAC + Zod + Helmet + Rate Limit"]
-  API --> CRUD["Synthetic CRUD Store"]
-  API --> AI["Credit Readiness Engine"]
-  API --> SIM["Payment Ecosystem Simulator"]
-  SIM --> CASH["Settlement + Refund Memory"]
-  CASH --> SCORE["Cashflow Trust Score"]
-  SCORE --> UI
-  AI --> UI
-~~~
-
-## AIML / DL Layer
-
-The repository includes working Python code in `ml/train_model.py`.
-
-It trains:
-
-- an explainable logistic-regression AIML baseline
-- a compact one-hidden-layer neural-network model as the DL demonstration
-- 10,000 synthetic rows with train/test split
-- holdout metrics, confusion matrix, feature importance, and model-card artifacts at `ml/model_card.json`, `ml/metrics.json`, and `ml/feature_importance.json`
-
-Run:
-
-```bash
-python ml/train_model.py
+  A[UPI / AA-style cashflow] --> B[Transaction pattern memory]
+  B --> C[Seasonality and stability signals]
+  C --> D[Explainable readiness profile]
+  D --> E[Credit-fit recommendation]
+  E --> F[Monitoring and early warning loop]
 ```
 
-Features used for this concept include `amount_paise`, `bank_success_rate`, `collect_decline_rate`, `risk_score`, `latency_ms`, `device_trust_score`, `merchant_trust_score`, and `retry_count`, with the app layer adding cashflow-specific signals such as inflow consistency, outflow discipline, repeat ratio, volatility, and supplier regularity.
+## Investor-grade capability map
 
-## Mock UPI / NPCI API
+| Layer | Capability | Value |
+|---|---|---|
+| Market | Thin-file merchant credit intelligence | Expands responsible lending reach |
+| Product | Cashflow-backed readiness profile | Converts raw flows into usable decisions |
+| AI/ML | Pattern, seasonality and anomaly analysis | Improves prioritisation and risk separation |
+| Platform | Partner-ready credit signal API | Can support lenders, fintechs and marketplaces |
+| Governance | Explainable underwriting posture | Reduces black-box credit risk |
 
-Example request:
+---
 
-```json
-{
-  "txnId": "TXN-DEMO-001",
-  "payerVpa": "payer@oksbi",
-  "payeeVpa": "merchant@upi",
-  "amount": 499,
-  "flow": "UPI_INTENT",
-  "purpose": "portfolio test flow",
-  "riskScore": 24,
-  "scenario": "HAPPY_PATH"
-}
-```
+## What visitors should understand in 60 seconds
 
-The response is intentionally NPCI-like for demos, but fully synthetic:
+- Many merchants are invisible to traditional bureau-heavy credit models.
+- Payment cashflows can become a memory layer, not just transaction history.
+- Explainability is central because lenders need reasons, not only scores.
+- The concept can be validated on synthetic and anonymised cashflow patterns.
+- Proprietary scoring and signal engineering are intentionally not public.
 
-- `gateway: NPCI_UPI_MOCK`
-- `rrn`, `upiRequestId`, `bankRefId`
-- `npciStatus`, `responseCode`, `responseMessage`
-- settlement and pre-settlement hold metadata
-- risk decision and reason codes
-- synthetic PSP/bank webhook callback state
+## Success metrics
 
-## Run Locally
+| Metric | Why it matters |
+|---|---|
+| Credit-ready merchant identification | Adoption and market-fit signal |
+| Risk separation quality | Lending viability |
+| Approval TAT improvement | Operational value |
+| Repeat monitoring coverage | Portfolio health and expansion |
 
-```bash
-npm install
-npm run verify
-npm --workspace backend run start
-npm --workspace frontend run preview
-python ml/train_model.py
-```
+## Validation scenarios
 
-Frontend: `http://127.0.0.1:5103`
+- Kirana merchant with stable daily inflows
+- Food stall with weekend seasonality
+- Service provider with monthly income spikes
+- Seasonal seller with festival-led volatility
+- Low-ticket high-frequency trader
+- Cash-heavy business with weak digital trails
 
-Backend health: `http://127.0.0.1:4103/api/health`
+## Positioning
 
-## Documentation
+Cashflow Memory for Bharat sits at the intersection of UPI, Account Aggregator-style cashflow intelligence, embedded finance, responsible lending and merchant inclusion.
 
-- [Architecture](docs/ARCHITECTURE.md)
-- [API](docs/API.md)
-- [Diagrams](docs/DIAGRAMS.md)
-- [Security](docs/SECURITY.md)
-- [SDLC](docs/SDLC.md)
-- [Testing](docs/TESTING.md)
-- [Prototype Audit Response](docs/PROTOTYPE_AUDIT.md)
-
-## License and Proprietary Rights
-
-This repository is **public for portfolio review only**. It is **not open source**.
-
-Copyright (c) 2026 Prashant Jagtap. All Rights Reserved.
-
-No one may use, copy, modify, distribute, deploy, commercialize, train on, or create derivative works from this code, documentation, diagrams, synthetic data, logos, UI designs, concepts, or repository materials without prior written permission from Prashant Jagtap.
-
-See [LICENSE](LICENSE) and [NOTICE](NOTICE.md). Permission requests: <jprbom@gmail.com>.
-
-**Author:** Prashant Jagtap <jprbom@gmail.com>
+**Owner:** [Prashant Jagtap](https://github.com/jprbom)  
+**Repository type:** Public showcase, proprietary concept
