@@ -8,6 +8,19 @@
   <img src="assets/system-map.svg" width="100%" alt="Cashflow Memory for Bharat system map">
 </p>
 
+## Latest Enhancement Map
+
+~~~mermaid
+flowchart LR
+  UI["Cashflow Timeline CTA"] --> AUTH["Signed Demo Token"]
+  AUTH --> API["Express API"]
+  API --> SIM["Payment Ecosystem Simulator"]
+  SIM --> SETTLE["Settlement / Refund Events"]
+  SETTLE --> MEMORY["90-day Cashflow Memory"]
+  MEMORY --> SCORE["Credit Readiness + Coaching"]
+  SCORE --> UI
+~~~
+
 ## Product Decision Flow
 
 ~~~mermaid
@@ -37,12 +50,25 @@ sequenceDiagram
   participant Mock as Mock NPCI/UPI Rail
   participant DB as JSON Test DB
   User->>UI: Click tab, CTA, or row drill-down
-  UI->>API: Request with x-user-role
+  UI->>API: Request with signed demo bearer token
   API->>DB: Read/write synthetic records
   API->>Model: Score domain-specific risk or recommendation
   API->>Mock: Generate UPI-like response code, RRN, callback
   Mock-->>API: Sandbox response, no real money movement
   API-->>UI: Render decision, reason codes, and drill-down
+~~~
+
+## Cashflow Memory Lifecycle
+
+~~~mermaid
+stateDiagram-v2
+  [*] --> PAYMENT_CAPTURED
+  PAYMENT_CAPTURED --> SETTLEMENT_READY
+  SETTLEMENT_READY --> CASHFLOW_LEDGER_UPDATED
+  CASHFLOW_LEDGER_UPDATED --> FEATURE_EXTRACTION
+  FEATURE_EXTRACTION --> READINESS_SCORE
+  READINESS_SCORE --> BORROWER_COACHING
+  READINESS_SCORE --> LENDER_REASON_CODES
 ~~~
 
 ## Deployment and SDLC View

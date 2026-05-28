@@ -1,5 +1,9 @@
 # Prototype Audit Response
 
+## Latest Audit Closure
+
+The latest implementation adds signed demo-token RBAC, a five-adapter payment ecosystem simulator, HMAC webhook signing, duplicate and out-of-order webhook handling, refund/dispute/reconciliation APIs, a frontend Payment Ecosystem Timeline, 10,000-row synthetic AIML/DL artifacts, and expanded enterprise documentation.
+
 ## Honest Status
 
 Cashflow Memory for Bharat is a runnable portfolio-grade prototype, not a production underwriting, Account Aggregator, or lending decision system. It demonstrates consent-aware cashflow readiness, synthetic CRUD workflows, RBAC simulation, a mocked UPI/NPCI response, tests, CI, Docker packaging, and SDLC documentation.
@@ -20,11 +24,11 @@ It should not be presented as: **a live credit bureau substitute, production len
 
 ## Prototype Boundaries
 
-- RBAC is a simulator. It uses `x-user-role`; production would require OIDC/JWT, signed sessions, tenant isolation, KMS-backed secrets, and immutable audit logs.
+- RBAC remains a simulator, but it now uses signed local demo bearer tokens and ignores forged `x-user-role`; production would still require OIDC/JWT, signed sessions, tenant isolation, KMS-backed secrets, and immutable audit logs.
 - Current readiness logic is a formula-based score, not real AA ingestion, bureau enrichment, affordability testing, or credit-risk model serving.
-- The ML script is educational and synthetic, not statistically valid lending-model training.
+- The ML script now generates 10,000 synthetic rows with train/test metrics, confusion matrix, model card, and feature importance. It remains synthetic and not statistically valid production lending-model training.
 - Persistence is JSON file storage, not a consent ledger, model registry, feature store, or regulated audit trail.
-- The UPI rail is fully mocked and does not connect to Account Aggregator, banks, GST, credit bureaus, UPI Credit Line, or lender LOS/LMS systems.
+- The payment ecosystem simulator is fully mocked and does not connect to Account Aggregator, banks, GST, credit bureaus, UPI Credit Line, or lender LOS/LMS systems.
 
 ## Serious Upgrade Path
 
@@ -33,4 +37,3 @@ It should not be presented as: **a live credit bureau substitute, production len
 - Add consent expiry, consent revocation, data minimization, and lender-view/customer-view reason codes.
 - Add fairness checks across geography, merchant category, income volatility, and thin-file segments.
 - Add policy tests for adverse-action reasons, affordability boundaries, and responsible line-increase simulation.
-
