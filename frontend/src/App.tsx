@@ -63,12 +63,13 @@ const CONFIG = {
     "endpoint": "/credit-readiness",
     "cta": "Generate Credit Memory",
     "payload": {
-      "inflowConsistency": 0.82,
-      "outflowDiscipline": 0.71,
+      "monthlyInflow": 124850,
+      "monthlyOutflow": 85630,
       "repeatCustomerRatio": 0.64,
-      "cashflowVolatility": 0.26,
-      "bureauThinFile": true,
-      "supplierPaymentRegularity": 0.68
+      "volatility": 0.26,
+      "repaymentDiscipline": 0.74,
+      "topPayerConcentration": 0.38,
+      "consentStatus": "ACTIVE"
     },
     "resultKey": "grade",
     "riskKey": "readinessScore"
